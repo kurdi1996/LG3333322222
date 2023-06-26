@@ -17,8 +17,8 @@ async def unauthorised(message: Message):
     chatID = message.chat.id
     checking = message.from_user.mention
     text = (
-        f"- حبيب {checking} ماتكدر تطفي الاغنية لان معندك مشرف :"
-        + f"\n- تحتاج مشرف وصلاحية حذف رسائل حتى تكدر تطفي"
+        f"- به ريز {checking} ببوره نه شي بوتي ته مريني تو نه مشرفي :"
+        + f"\n- محتاجي ادميني ورولي حذف ريساله هه تا بشي شول بوتي بكه ي"
     )
     try:
         await message.reply_text(text)
