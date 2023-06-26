@@ -172,7 +172,7 @@ async def hfmm(_, message):
             return
         DISABLED_GROUPS.remove(message.chat.id)
         await lel.edit(
-            f" __- تم تشغيل البوت بنجاح **{message.chat.title}**__"
+            f" __- بوت بدرستي شول كر **{message.chat.title}**__"
         )
 
     elif status in ["OFF", "off", "Off"]:
@@ -180,12 +180,12 @@ async def hfmm(_, message):
 
         if message.chat.id in DISABLED_GROUPS:
             await lel.edit(
-                f" __- تم تشغيل بنجاح **{message.chat.title}**__"
+                f" __- تم درست شولكر **{message.chat.title}**__"
             )
             return
         DISABLED_GROUPS.append(message.chat.id)
         await lel.edit(
-            f" __- تم اطفاء البوت بنجاح**{message.chat.title}**__"
+            f" __- تم بوت بدرستي ته مري **{message.chat.title}**__"
         )
     else:
         await message.reply_text("لتشغيل البوت اكتب الموسيقى on لاطفاء البوت اكتب الموسيقى off يرجى ملاحظة ان الامر للمطورين فقط")
@@ -207,7 +207,7 @@ async def closed(_, query: CallbackQuery):
 
 # play
 @Client.on_message(
-    command(["شغل", f"تشغيل"])
+    command(["/play", f"تشغيل"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -227,7 +227,7 @@ async def play(_, message: Message):
             " __**- المطور ضايج وطفة البوت راسلة وكله شبيك رحمه لدينك! **__"
         )
         return
-    lel = await message.reply("‹ يتم التشغيل الان ›")
+    lel = await message.reply("‹ دي نوكه شول كه ت ›")
 
     chid = message.chat.id
 
@@ -309,9 +309,9 @@ async def play(_, message: Message):
             )
 
         file_name = get_file_name(audio)
-        url = f"https://t.me/{UPDATE}"
+        url = f"https://t.me/{TM_412}"
         title = "Wa"
-        thumb_name = "https://graph.org/file/a7a4ba8ac40b7f0bfb46f.jpg"
+        thumb_name = "https://graph.org/file/ce27991ed1e6ace351956.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -366,7 +366,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://graph.org/file/a7a4ba8ac40b7f0bfb46f.jpg"
+            thumb_name = "https://graph.org/file/04d0acb87765c2cde5e89.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -406,7 +406,7 @@ async def play(_, message: Message):
                     try:
                         if eta > 2:
                             lel.edit(
-                                f"‹ يتم التشغيل الان ›"
+                                f"‹ دێ نوكه شول كه ت ›"
                             )
                     except Exception as e:
                         pass
@@ -415,7 +415,7 @@ async def play(_, message: Message):
                         flex[str(bytesx)] += 1
                         if eta > 2:
                             lel.edit(
-                                f"‹ يتم البحث الان ›"
+                                f"‹ يێ لێت ڪه ريت ›"
                             )
                         print(
                             f"[{url_suffix}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds"
@@ -435,7 +435,7 @@ async def play(_, message: Message):
                         flex[str(bytesx)] += 1
                         if eta > 2:
                             lel.edit(
-                                f"‹ يتم البحث الان ›"
+                                f"‹ يێ ليت كه ريت به ريز ›"
                             )
                         print(
                             f"[{url_suffix}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds"
@@ -447,7 +447,7 @@ async def play(_, message: Message):
                     taken = "00:00"
                 size = d["_total_bytes_str"]
                 lel.edit(
-                    f"‹ يتم التشغيل الان ›"
+                    f"‹ نوكه شول كه ت ›"
                 )
                 print(f"[{url_suffix}] Downloaded| Elapsed: {taken} seconds")
 
@@ -578,8 +578,8 @@ async def play(_, message: Message):
     if await is_active_chat(message.chat.id):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
-            photo="https://graph.org/file/a7a4ba8ac40b7f0bfb46f.jpg",
-            caption="**[- تم ضفتها ݪقأئمة أݪأڼتضاࢪ 🫡.]({})**\n\n**- شغݪهأ أݪأخ : {}**\n**- تم ۅدأعتڪ ضفتها ݪقأئمة أݪأڼتضاࢪ : {}**".format(
+            photo="https://graph.org/file/04d0acb87765c2cde5e89.jpg",
+            caption="**[- جافه ري به ديفدا دورافيه 🫡.]({})**\n\n**- شغݪهأ أݪأخ : {}**\n**- تم ۅدأعتڪ ضفتها ݪقأئمة أݪأڼتضاࢪ : {}**".format(
                 url,
                 message.from_user.mention(),
                 position,
@@ -599,7 +599,7 @@ async def play(_, message: Message):
             )
         except Exception:
             return await lel.edit(
-                "- شلون اشغل وانتو مفاتحين اتصال شبيكم عمي ."
+                "- جاواشول كه م وتيل كرتي بيت 😂 ."
             )
 
         await music_on(message.chat.id)
@@ -612,7 +612,7 @@ async def play(_, message: Message):
             ),
         )
 
-    os.remove("https://graph.org/file/a7a4ba8ac40b7f0bfb46f.jpg")
+    os.remove("https://telegra.ph/file/231cabb3c0aff203ce773.jpg")
     return await lel.delete()
         
 
