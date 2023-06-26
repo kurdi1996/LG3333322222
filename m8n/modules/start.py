@@ -20,9 +20,9 @@ from m8n.config import OWNER_USERNAME
 async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{START_PIC}",
-        caption=f""" ‹ مرحبا بك عزيزي في بوت **{BOT_NAME}**
+        caption=f""" ‹ سلاف به ريز خيرهاتي بوبوتي سترانا **{BOT_NAME}**
         
-- اضغط على زر ‹ الاوامر › لمعرفة الأوامر ›
+- ده ستي خول في به شي بده ‹ الاوامر › لمعرفة الأوامر ›
 
 - اضغط على زر ‹ الاعدادات › لمعرفة الاعدادات ›""",
         reply_markup=InlineKeyboardMarkup(
@@ -37,7 +37,7 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "‹ من بكه كروبي خودا ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ]
            ]
         ),
@@ -48,12 +48,12 @@ async def start_(client: Client, message: Message):
 @Client.on_message(command(["المطور", f"مطور"]) & filters.group & ~filters.edited)
 async def gcstart(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/5fdd8da2461c05d893189.jpg",
-        caption=f"- مطور البوت . \n\n - قناة المطور @{UPDATE}",
+        photo=f"https://graph.org/file/ce27991ed1e6ace351956.jpg",
+        caption=f"- مطور البوت . \n\n - قناة المطور @{TM_412}",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("- المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("- المطور .", url=f"https://t.me/{TM_412}")
                 ]
             ]
         ),
